@@ -51,7 +51,7 @@ glat_c, glon_c = 72, 352
 position = (glon_c, glat_c)
 
 # Orientation towards magnetic pole
-glat_pole, glon_pole = 79, 289 # From Jone's code who got it from Matt's code...
+glat_pole, glon_pole = 90 - 11.435, 290.24 # From Jone's code who got it from Matt's code...
 orientation = np.degrees(lompe.data_tools.dataloader.getbearing(np.array([glat_c]), 
                                                                 np.array([glon_c]), 
                                                                 np.array([glat_pole]), 

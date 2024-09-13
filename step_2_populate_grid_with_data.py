@@ -3,11 +3,7 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-from secsy import cubedsphere
-import lompe
 import gemini3d.read
-import dipole
-import polplot
 import pickle
 from tqdm import tqdm
 from gemini3d.grid.gridmodeldata import model2pointsgeogcoords
@@ -18,7 +14,7 @@ import helpers
 
 #%% Paths
 
-p_gemini = '/home/bing/server/GEMINI/hack_version/'
+p_gemini = '/home/bing/server/GEMINI/hack_version_2/'
 p_output = '/home/bing/BCSS-DAG Dropbox/Michael Madelaire/work/code/repos/ISSI_506/'
 
 #%% Load the cubed sphere grid
@@ -147,7 +143,7 @@ Jxi = Jxi.reshape(grid.shape)
 Jeta = Jeta.reshape(grid.shape)
 plt.quiver(grid.xi[::ss, ::ss].flatten(), grid.eta[::ss, ::ss].flatten(), 
            Jxi[::ss, ::ss].flatten(), Jeta[::ss, ::ss].flatten(), 
-           scale=3e1, width=1e-3)
+           scale=2e1, width=1e-3)
 plt.savefig(p_output + 'figures/J_CS.png', bbox_inches='tight')
 plt.close('all')
 plt.ion()
